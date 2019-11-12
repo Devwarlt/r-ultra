@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "r-ultra", "src\r-ultra.csproj", "{35E2665E-DFF7-4BC8-A0E9-42F6304ED103}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desktop", "src\Desktop.csproj", "{35E2665E-DFF7-4BC8-A0E9-42F6304ED103}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "org", "org", "{06DFBD90-28B4-4287-814A-5D073E944811}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "loesoft-games", "loesoft-games", "{73945B37-4B1A-4552-BF28-4B93DD541115}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "rotmg", "rotmg", "{937E8829-66C1-45E4-8992-33BB875C620C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "r-ultra", "r-ultra", "{B8D95E90-4D27-4718-9E0C-6D141F57FB70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,9 +28,10 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{35E2665E-DFF7-4BC8-A0E9-42F6304ED103} = {937E8829-66C1-45E4-8992-33BB875C620C}
+		{35E2665E-DFF7-4BC8-A0E9-42F6304ED103} = {B8D95E90-4D27-4718-9E0C-6D141F57FB70}
 		{73945B37-4B1A-4552-BF28-4B93DD541115} = {06DFBD90-28B4-4287-814A-5D073E944811}
 		{937E8829-66C1-45E4-8992-33BB875C620C} = {73945B37-4B1A-4552-BF28-4B93DD541115}
+		{B8D95E90-4D27-4718-9E0C-6D141F57FB70} = {937E8829-66C1-45E4-8992-33BB875C620C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F8DDE5B7-6BB4-4CC4-A384-D4EBEE59A7B6}

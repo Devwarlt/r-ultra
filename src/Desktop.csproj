@@ -7,7 +7,7 @@
     <ProjectGuid>{35E2665E-DFF7-4BC8-A0E9-42F6304ED103}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>org.loesoft.rotmg.ultra</RootNamespace>
-    <AssemblyName>org.loesoft.rotmg.ultra</AssemblyName>
+    <AssemblyName>R-Ultra</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -83,7 +83,6 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Game.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
