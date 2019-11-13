@@ -1,10 +1,9 @@
+using org.loesoft.rotmg.ultra.core.gui.screen;
 using System;
 using Ultraviolet;
 using Ultraviolet.Content;
 using Ultraviolet.Core;
 using Ultraviolet.OpenGL;
-using Ultraviolet.Presentation;
-using Ultraviolet.Presentation.Styles;
 
 namespace org.loesoft.rotmg.ultra.core
 {
@@ -29,7 +28,6 @@ namespace org.loesoft.rotmg.ultra.core
 
             PopulateConfiguration(configuration);
 
-            PresentationFoundation.Configure(configuration);
 #if DEBUG
             configuration.Debug = true;
             configuration.DebugLevels = DebugLevels.Error | DebugLevels.Warning;
@@ -45,20 +43,19 @@ namespace org.loesoft.rotmg.ultra.core
             base.OnDrawing(time);
         }
 
-        private GlobalStyleSheet globalStyleSheet;
+        //private GlobalStyleSheet globalStyleSheet;
 
         protected override void OnLoadingContent()
         {
             core = ContentManager.Create("core");
 
-            var upf = Ultraviolet.GetUI().GetPresentationFoundation();
-            upf.RegisterKnownTypes(GetType().Assembly);
-
             //globalStyleSheet = GlobalStyleSheet.Create();
             //globalStyleSheet.Append(content, "core/gui/style/<sheet>");
 
             //upf.SetGlobalStyleSheet(globalStyleSheet);
-            upf.CompileExpressionsIfSupported("core");
+
+            var tf = new TestForm(Ultraviolet);
+            tf.Show();
 
             base.OnLoadingContent();
         }
