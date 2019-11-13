@@ -1,5 +1,6 @@
 ﻿using org.loesoft.rotmg.ultra.core;
 using System;
+using System.Diagnostics;
 using System.Reflection;
 using Ultraviolet;
 using Ultraviolet.OpenGL;
@@ -9,27 +10,31 @@ namespace org.loesoftgames.rotmg.rultra
 {
     public class App
     {
+        public static string application { get; private set; }
+        public static string company { get; private set; }
         public static UltravioletContext context { get; private set; }
-        public static string name { get; private set; }
         public static string version { get; private set; }
         public static IUltravioletWindow window { get; private set; }
 
         [STAThread]
         private static void Main()
         {
+            var assembly = Assembly.GetExecutingAssembly();
+            application = assembly.GetName().Name;
+            company = FileVersionInfo.GetVersionInfo(assembly.Location).CompanyName;
+            version =
+                $"{assembly.GetName().Version}".Substring(0,
+                $"{assembly.GetName().Version}".Length - 2);
+
             OpenGLUltravioletContext ultravioletContext = null;
 
-            var game = new Game();
+            var game = new Game(company, application);
             game.Configure(
                 ref ultravioletContext,
                 out IUltravioletWindow ultravioletWindow);
 
             context = ultravioletContext;
             window = ultravioletWindow;
-            name = Assembly.GetExecutingAssembly().GetName().Name;
-            version =
-                $"{Assembly.GetExecutingAssembly().GetName().Version}".Substring(0,
-                $"{Assembly.GetExecutingAssembly().GetName().Version}".Length - 2);
 
             using (game) game.Run();
         }

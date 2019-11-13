@@ -13,7 +13,8 @@ namespace org.loesoft.rotmg.ultra.core
         private OpenGLUltravioletConfiguration config;
         private ContentManager core;
 
-        public Game() : base("LoESoft Games", "R-Ultra")
+        public Game(string company, string application)
+            : base(company, application)
         {
         }
 
