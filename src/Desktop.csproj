@@ -40,6 +40,9 @@
   <PropertyGroup>
     <ApplicationIcon>loesoft-new.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.DotNet.PlatformAbstractions, Version=2.0.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.DotNet.PlatformAbstractions.2.0.4\lib\net45\Microsoft.DotNet.PlatformAbstractions.dll</HintPath>
@@ -104,12 +107,8 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="core\Game.cs" />
-    <Compile Include="core\gui\screen\TestForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="core\gui\screen\TestForm.Designer.cs">
-      <DependentUpon>TestForm.cs</DependentUpon>
-    </Compile>
+    <None Include="core\gui\screen\.gitkeep" />
+    <Compile Include="core\GameUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
