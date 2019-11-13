@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Sprite>
+  <Animations>
+    <Animation>
+      <Frames Texture="textures/SampleWizard" Width="8" Height="8" OriginX="4" OriginY="4">
+        <Frame X="0" Y="0" />
+      </Frames>
+    </Animation>
+  </Animations>
+</Sprite>

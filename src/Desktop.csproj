@@ -106,7 +106,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="core\assets\GlobalSpriteID.cs" />
     <Compile Include="core\Game.cs" />
+    <None Include="core\assets\manifests\assets.manifest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="core\assets\sprites\SampleWizard.sprite">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="core\dao\.gitkeep" />
     <None Include="core\gui\screen\.gitkeep" />
     <Compile Include="core\GameUtils.cs" />
@@ -118,8 +125,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="core\assets\sprites\textures\SampleWizard.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="loesoft-new.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Ultraviolet.BASS.Native.2019.9.0.4045\build\net461\Ultraviolet.BASS.Native.targets" Condition="Exists('..\packages\Ultraviolet.BASS.Native.2019.9.0.4045\build\net461\Ultraviolet.BASS.Native.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
