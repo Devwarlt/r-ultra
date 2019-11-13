@@ -107,12 +107,14 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="core\Game.cs" />
+    <None Include="core\dao\.gitkeep" />
     <None Include="core\gui\screen\.gitkeep" />
     <Compile Include="core\GameUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="core\vo\.gitkeep" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
