@@ -17,7 +17,7 @@ namespace org.loesoft.rotmg.ultra.core
         {
         }
 
-        public void Configure(out OpenGLUltravioletContext context, out IUltravioletWindow window)
+        public void Configure(ref OpenGLUltravioletContext context, out IUltravioletWindow window)
         {
             config = new OpenGLUltravioletConfiguration();
 #if DEBUG

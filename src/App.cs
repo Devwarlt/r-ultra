@@ -17,9 +17,11 @@ namespace org.loesoftgames.rotmg.rultra
         [STAThread]
         private static void Main()
         {
+            OpenGLUltravioletContext ultravioletContext = null;
+
             var game = new Game();
             game.Configure(
-                out OpenGLUltravioletContext ultravioletContext,
+                ref ultravioletContext,
                 out IUltravioletWindow ultravioletWindow);
 
             context = ultravioletContext;
