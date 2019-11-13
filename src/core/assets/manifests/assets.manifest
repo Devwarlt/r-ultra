@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentManifest Name="assets">
+  <ContentGroup Name="sprites" Directory="sprites" Type="Ultraviolet.Graphics.Graphics2D.Sprite">
+    <Asset Name="SampleWizard">SampleWizard</Asset>
+  </ContentGroup>
+</ContentManifest>

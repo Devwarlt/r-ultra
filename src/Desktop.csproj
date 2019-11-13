@@ -40,6 +40,9 @@
   <PropertyGroup>
     <ApplicationIcon>loesoft-new.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.DotNet.PlatformAbstractions, Version=2.0.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.DotNet.PlatformAbstractions.2.0.4\lib\net45\Microsoft.DotNet.PlatformAbstractions.dll</HintPath>
@@ -50,8 +53,13 @@
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -67,11 +75,23 @@
     <Reference Include="Ultraviolet.Core, Version=2019.9.0.0, Culture=neutral, PublicKeyToken=78da2f4877323311, processorArchitecture=MSIL">
       <HintPath>..\packages\Ultraviolet.Core.2019.9.0.4045\lib\net461\Ultraviolet.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Ultraviolet.FMOD, Version=2019.9.0.0, Culture=neutral, PublicKeyToken=78da2f4877323311, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ultraviolet.FMOD.2019.9.0.4045\lib\net461\Ultraviolet.FMOD.dll</HintPath>
+    </Reference>
     <Reference Include="Ultraviolet.OpenGL, Version=2019.9.0.0, Culture=neutral, PublicKeyToken=78da2f4877323311, processorArchitecture=MSIL">
       <HintPath>..\packages\Ultraviolet.OpenGL.2019.9.0.4045\lib\net461\Ultraviolet.OpenGL.dll</HintPath>
     </Reference>
     <Reference Include="Ultraviolet.OpenGL.Bindings, Version=2019.9.0.0, Culture=neutral, PublicKeyToken=78da2f4877323311, processorArchitecture=MSIL">
       <HintPath>..\packages\Ultraviolet.OpenGL.Bindings.2019.9.0.4045\lib\net461\Ultraviolet.OpenGL.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Ultraviolet.Presentation, Version=2019.9.0.0, Culture=neutral, PublicKeyToken=78da2f4877323311, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ultraviolet.Presentation.2019.9.0.4045\lib\net461\Ultraviolet.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="Ultraviolet.Presentation.Compiler, Version=2019.9.0.0, Culture=neutral, PublicKeyToken=78da2f4877323311, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ultraviolet.Presentation.Compiler.2019.9.0.4045\lib\net461\Ultraviolet.Presentation.Compiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Ultraviolet.Presentation.Uvss, Version=2019.9.0.0, Culture=neutral, PublicKeyToken=78da2f4877323311, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ultraviolet.Presentation.2019.9.0.4045\lib\net461\Ultraviolet.Presentation.Uvss.dll</HintPath>
     </Reference>
     <Reference Include="Ultraviolet.SDL2, Version=2019.9.0.0, Culture=neutral, PublicKeyToken=78da2f4877323311, processorArchitecture=MSIL">
       <HintPath>..\packages\Ultraviolet.SDL2.2019.9.0.4045\lib\net461\Ultraviolet.SDL2.dll</HintPath>
@@ -79,19 +99,41 @@
     <Reference Include="Ultraviolet.Shims.Desktop, Version=2019.9.0.0, Culture=neutral, PublicKeyToken=78da2f4877323311, processorArchitecture=MSIL">
       <HintPath>..\packages\Ultraviolet.Shims.Desktop.2019.9.0.4045\lib\net461\Ultraviolet.Shims.Desktop.dll</HintPath>
     </Reference>
+    <Reference Include="Ultraviolet.Windows.Forms, Version=2019.9.0.0, Culture=neutral, PublicKeyToken=78da2f4877323311, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ultraviolet.Windows.Forms.2019.9.0.4045\lib\net461\Ultraviolet.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="Game.cs" />
+    <Compile Include="core\assets\Camera.cs" />
+    <Compile Include="core\assets\entities\Entity.cs" />
+    <Compile Include="core\assets\entities\Player.cs" />
+    <Compile Include="core\assets\GlobalSpriteID.cs" />
+    <Compile Include="core\Game.cs" />
+    <None Include="core\assets\manifests\assets.manifest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="core\assets\sprites\SampleWizard.sprite">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="core\dao\.gitkeep" />
+    <None Include="core\gui\screen\.gitkeep" />
+    <Compile Include="core\GameUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="core\vo\.gitkeep" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="core\assets\sprites\textures\SampleWizard.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="loesoft-new.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Ultraviolet.BASS.Native.2019.9.0.4045\build\net461\Ultraviolet.BASS.Native.targets" Condition="Exists('..\packages\Ultraviolet.BASS.Native.2019.9.0.4045\build\net461\Ultraviolet.BASS.Native.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

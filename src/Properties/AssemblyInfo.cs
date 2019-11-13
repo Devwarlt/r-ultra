@@ -1,6 +1,5 @@
-﻿using System.Resources;
-using System.Reflection;
-using System.Runtime.CompilerServices;
+﻿using System.Reflection;
+using System.Resources;
 using System.Runtime.InteropServices;
 
 // As informações gerais sobre um assembly são controladas por
@@ -26,7 +25,7 @@ using System.Runtime.InteropServices;
 // As informações da versão de um assembly consistem nos quatro valores a seguir:
 //
 //      Versão Principal
-//      Versão Secundária 
+//      Versão Secundária
 //      Número da Versão
 //      Revisão
 //
@@ -36,4 +35,3 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("0.1.0.0")]
 [assembly: AssemblyFileVersion("0.1.0.0")]
 [assembly: NeutralResourcesLanguage("en-JM")]
-

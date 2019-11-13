@@ -4,7 +4,7 @@
 
 R-Ultra is a game client for Realm of the Mad God Private Servers written in C# using .NET and Ultraviolet frameworks. More details and references how to use this game framework are available [**here**][framework-refs].
 
-## Collaborators
+## Contributors
 - [**@Devwarlt**][devwarlt]
 
 [codacy]: https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Devwarlt/r-ultra&amp;utm_campaign=Badge_Grade
