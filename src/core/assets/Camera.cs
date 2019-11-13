@@ -19,9 +19,9 @@ namespace org.loesoft.rotmg.ultra.core.assets
         {
             this.entity = entity;
 
-            var spriteSize = entity.GetSpriteSize();
+            var size = entity.GetSpriteSize();
 
-            this.spriteSize = new Size2(spriteSize.Width / 2, spriteSize.Height / 2);
+            spriteSize = new Size2(size.Width / 2, size.Height / 2);
         }
 
         public Matrix GetMatrix()

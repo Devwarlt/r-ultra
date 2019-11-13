@@ -11,7 +11,7 @@ namespace org.loesoftgames.rotmg.rultra
 {
     public class App
     {
-        public static readonly Size2 size = new Size2() { Width = 800, Height = 600 };
+        public static readonly Size2 size = new Size2 { Width = 800, Height = 600 };
 
         public static string application { get; private set; }
         public static string company { get; private set; }
