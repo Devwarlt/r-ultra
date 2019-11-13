@@ -1,18 +1,32 @@
-using org.loesoft.rotmg.ultra.core.gui.screen;
+using org.loesoftgames.rotmg.rultra;
 using System;
 using Ultraviolet;
 using Ultraviolet.Content;
 using Ultraviolet.Core;
 using Ultraviolet.OpenGL;
+using Ultraviolet.Platform;
 
 namespace org.loesoft.rotmg.ultra.core
 {
     public class Game : UltravioletApplication
     {
+        private OpenGLUltravioletConfiguration config;
         private ContentManager core;
 
         public Game() : base("LoESoft Games", "R-Ultra")
         {
+        }
+
+        public void Configure(out OpenGLUltravioletContext context, out IUltravioletWindow window)
+        {
+            config = new OpenGLUltravioletConfiguration();
+#if DEBUG
+            config.Debug = true;
+            config.DebugLevels = DebugLevels.Error | DebugLevels.Warning;
+            config.DebugCallback = (uv, level, message) => System.Diagnostics.Debug.WriteLine(message);
+#endif
+            context = new OpenGLUltravioletContext(this, config);
+            window = context.GetPlatform().Windows.GetPrimary();
         }
 
         protected override void Dispose(Boolean disposing)
@@ -24,16 +38,9 @@ namespace org.loesoft.rotmg.ultra.core
 
         protected override UltravioletContext OnCreatingUltravioletContext()
         {
-            var configuration = new OpenGLUltravioletConfiguration();
+            PopulateConfiguration(config);
 
-            PopulateConfiguration(configuration);
-
-#if DEBUG
-            configuration.Debug = true;
-            configuration.DebugLevels = DebugLevels.Error | DebugLevels.Warning;
-            configuration.DebugCallback = (uv, level, message) => System.Diagnostics.Debug.WriteLine(message);
-#endif
-            return new OpenGLUltravioletContext(this, configuration);
+            return App.context;
         }
 
         protected override void OnDrawing(UltravioletTime time)
@@ -49,13 +56,12 @@ namespace org.loesoft.rotmg.ultra.core
         {
             core = ContentManager.Create("core");
 
+            GameUtils.UpdateCaption();
+
             //globalStyleSheet = GlobalStyleSheet.Create();
             //globalStyleSheet.Append(content, "core/gui/style/<sheet>");
 
             //upf.SetGlobalStyleSheet(globalStyleSheet);
-
-            var tf = new TestForm(Ultraviolet);
-            tf.Show();
 
             base.OnLoadingContent();
         }
