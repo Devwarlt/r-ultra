@@ -106,6 +106,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="core\assets\Camera.cs" />
+    <Compile Include="core\assets\entities\Entity.cs" />
+    <Compile Include="core\assets\entities\Player.cs" />
     <Compile Include="core\assets\GlobalSpriteID.cs" />
     <Compile Include="core\Game.cs" />
     <None Include="core\assets\manifests\assets.manifest">

@@ -3,6 +3,7 @@ using System;
 using System.Diagnostics;
 using System.Reflection;
 using Ultraviolet;
+using Ultraviolet.Content;
 using Ultraviolet.OpenGL;
 using Ultraviolet.Platform;
 
@@ -14,6 +15,7 @@ namespace org.loesoftgames.rotmg.rultra
 
         public static string application { get; private set; }
         public static string company { get; private set; }
+        public static ContentManager content { get; private set; }
         public static UltravioletContext context { get; private set; }
         public static string version { get; private set; }
         public static IUltravioletWindow window { get; private set; }
@@ -33,11 +35,13 @@ namespace org.loesoftgames.rotmg.rultra
             var game = new Game(company, application);
             game.Configure(
                 ref ultravioletContext,
-                out IUltravioletWindow ultravioletWindow);
+                out IUltravioletWindow ultravioletWindow,
+                out ContentManager contentManager);
 
             context = ultravioletContext;
+            content = contentManager;
             window = ultravioletWindow;
-            window.ClientSize = size;
+            window.SetWindowedClientSizeCentered(size);
 
             using (game) game.Run();
         }
