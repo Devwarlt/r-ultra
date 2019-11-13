@@ -73,6 +73,15 @@
     <Reference Include="Ultraviolet.OpenGL.Bindings, Version=2019.9.0.0, Culture=neutral, PublicKeyToken=78da2f4877323311, processorArchitecture=MSIL">
       <HintPath>..\packages\Ultraviolet.OpenGL.Bindings.2019.9.0.4045\lib\net461\Ultraviolet.OpenGL.Bindings.dll</HintPath>
     </Reference>
+    <Reference Include="Ultraviolet.Presentation, Version=2019.9.0.0, Culture=neutral, PublicKeyToken=78da2f4877323311, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ultraviolet.Presentation.2019.9.0.4045\lib\net461\Ultraviolet.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="Ultraviolet.Presentation.Compiler, Version=2019.9.0.0, Culture=neutral, PublicKeyToken=78da2f4877323311, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ultraviolet.Presentation.Compiler.2019.9.0.4045\lib\net461\Ultraviolet.Presentation.Compiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Ultraviolet.Presentation.Uvss, Version=2019.9.0.0, Culture=neutral, PublicKeyToken=78da2f4877323311, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ultraviolet.Presentation.2019.9.0.4045\lib\net461\Ultraviolet.Presentation.Uvss.dll</HintPath>
+    </Reference>
     <Reference Include="Ultraviolet.SDL2, Version=2019.9.0.0, Culture=neutral, PublicKeyToken=78da2f4877323311, processorArchitecture=MSIL">
       <HintPath>..\packages\Ultraviolet.SDL2.2019.9.0.4045\lib\net461\Ultraviolet.SDL2.dll</HintPath>
     </Reference>

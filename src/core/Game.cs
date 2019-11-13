@@ -31,7 +31,6 @@ namespace org.loesoft.rotmg.ultra.core
             configuration.DebugLevels = DebugLevels.Error | DebugLevels.Warning;
             configuration.DebugCallback = (uv, level, message) => System.Diagnostics.Debug.WriteLine(message);
 #endif
-
             return new OpenGLUltravioletContext(this, configuration);
         }
 
