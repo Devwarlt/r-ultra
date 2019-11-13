@@ -3,12 +3,14 @@ using Ultraviolet;
 using Ultraviolet.Content;
 using Ultraviolet.Core;
 using Ultraviolet.OpenGL;
+using Ultraviolet.Presentation;
+using Ultraviolet.Presentation.Styles;
 
 namespace org.loesoft.rotmg.ultra.core
 {
     public class Game : UltravioletApplication
     {
-        private ContentManager content;
+        private ContentManager core;
 
         public Game() : base("LoESoft Games", "R-Ultra")
         {
@@ -16,7 +18,7 @@ namespace org.loesoft.rotmg.ultra.core
 
         protected override void Dispose(Boolean disposing)
         {
-            if (disposing) SafeDispose.DisposeRef(ref content);
+            if (disposing) SafeDispose.DisposeRef(ref core);
 
             base.Dispose(disposing);
         }
@@ -24,8 +26,10 @@ namespace org.loesoft.rotmg.ultra.core
         protected override UltravioletContext OnCreatingUltravioletContext()
         {
             var configuration = new OpenGLUltravioletConfiguration();
+
             PopulateConfiguration(configuration);
 
+            PresentationFoundation.Configure(configuration);
 #if DEBUG
             configuration.Debug = true;
             configuration.DebugLevels = DebugLevels.Error | DebugLevels.Warning;
@@ -41,11 +45,20 @@ namespace org.loesoft.rotmg.ultra.core
             base.OnDrawing(time);
         }
 
+        private GlobalStyleSheet globalStyleSheet;
+
         protected override void OnLoadingContent()
         {
-            content = ContentManager.Create("Content");
+            core = ContentManager.Create("core");
 
-            // TODO: Load content here
+            var upf = Ultraviolet.GetUI().GetPresentationFoundation();
+            upf.RegisterKnownTypes(GetType().Assembly);
+
+            //globalStyleSheet = GlobalStyleSheet.Create();
+            //globalStyleSheet.Append(content, "core/gui/style/<sheet>");
+
+            //upf.SetGlobalStyleSheet(globalStyleSheet);
+            upf.CompileExpressionsIfSupported("core");
 
             base.OnLoadingContent();
         }
