@@ -6,6 +6,7 @@ using System.IO;
 using Ultraviolet;
 using Ultraviolet.Content;
 using Ultraviolet.Core;
+using Ultraviolet.Graphics;
 using Ultraviolet.Graphics.Graphics2D;
 using Ultraviolet.Graphics.Graphics2D.Text;
 using Ultraviolet.OpenGL;
@@ -43,7 +44,7 @@ namespace org.loesoft.rotmg.ultra.core
         {
             if (disposing)
             {
-                //SafeDispose.Dispose(batch);
+                SafeDispose.Dispose(batch);
                 SafeDispose.Dispose(App.content);
             }
 
@@ -59,13 +60,13 @@ namespace org.loesoft.rotmg.ultra.core
 
         protected override void OnDrawing(UltravioletTime time)
         {
-            //batch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp, null, null, null, camera.GetMatrix());
+            batch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp, null, null, null, camera.GetMatrix());
 
-            //player.Draw(batch);
-            //DrawAlignedText();
-            //DrawColoredAndStyledText();
+            player.Draw(batch);
+            DrawAlignedText();
+            DrawColoredAndStyledText();
 
-            //batch.End();
+            batch.End();
 
             base.OnDrawing(time);
         }
@@ -73,29 +74,29 @@ namespace org.loesoft.rotmg.ultra.core
         protected override void OnLoadingContent()
         {
             GameUtils.UpdateCaption();
-            //Contract.Require(App.content, nameof(App.content));
+            Contract.Require(App.content, nameof(App.content));
 
-            //var uvContent = App.context.GetContent();
+            var uvContent = App.context.GetContent();
 
-            //OnLoadingContentManifests(uvContent);
-            //OnLoadingContentAssets(uvContent);
-            //OnLoadingInputs();
-            //OnLoadingExtra();
+            OnLoadingContentManifests(uvContent);
+            OnLoadingContentAssets(uvContent);
+            OnLoadingInputs();
+            OnLoadingExtra();
 
             base.OnLoadingContent();
         }
 
         protected override void OnShutdown()
         {
-            //OnSavingInputs();
+            OnSavingInputs();
 
             base.OnShutdown();
         }
 
         protected override void OnUpdating(UltravioletTime time)
         {
-            //player.Update(time);
-            //camera.SetPosition(player);
+            player.Update(time);
+            camera.SetPosition(player);
 
             base.OnUpdating(time);
         }
@@ -104,8 +105,8 @@ namespace org.loesoft.rotmg.ultra.core
         {
             var window = App.window;
             var size = new Size2(window.DrawableSize.Width, window.DrawableSize.Height);
-            var width = size.Width / 5;
-            var height = size.Height / 5;
+            var width = size.Width;
+            var height = size.Height;
 
             var settingsTopLeft = new TextLayoutSettings(spriteFontSegoe, width, height, TextFlags.AlignTop | TextFlags.AlignLeft);
             textRenderer.Draw(batch, "Aligned top left", Vector2.Zero, Color.White, settingsTopLeft);

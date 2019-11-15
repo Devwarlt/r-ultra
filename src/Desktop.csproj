@@ -113,7 +113,6 @@
     <Compile Include="core\entities\Player.cs" />
     <Compile Include="core\assets\AssetFontID.cs" />
     <Compile Include="core\assets\AssetSpriteID.cs" />
-    <Compile Include="core\Game2.cs" />
     <Compile Include="core\Hotkeys.cs" />
     <Compile Include="core\texts\TextAlignment.cs" />
     <Compile Include="core\texts\TextDisplay.cs" />

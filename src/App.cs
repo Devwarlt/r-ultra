@@ -32,7 +32,7 @@ namespace org.loesoftgames.rotmg.rultra
 
             OpenGLUltravioletContext ultravioletContext = null;
 
-            var game = new Game2(company, application);
+            var game = new Game(company, application);
             game.Configure(
                 ref ultravioletContext,
                 out IUltravioletWindow ultravioletWindow,

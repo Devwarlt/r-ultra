@@ -10,7 +10,7 @@ namespace org.loesoft.rotmg.ultra.core.entities
         protected readonly Hotkeys hotkeys;
         protected Vector2 position = Vector2.Zero;
 
-        private static readonly Vector2 scale = new Vector2(2f, 2f);
+        private static readonly Vector2 scale = new Vector2(5f, 5f);
 
         private readonly Size2 size;
         private readonly Sprite sprite;
@@ -28,8 +28,7 @@ namespace org.loesoft.rotmg.ultra.core.entities
         protected MoveState moveState { get; private set; } = MoveState.Idle;
 
         public void Draw(SpriteBatch batch) =>
-            //batch.DrawScaledSprite(sprite[0].Controller, position, scale);
-            batch.DrawSprite(sprite[0].Controller, position);
+            batch.DrawScaledSprite(sprite[0].Controller, position, scale);
 
         public Vector2 GetPosition() => position;
 
@@ -54,9 +53,9 @@ namespace org.loesoft.rotmg.ultra.core.entities
         private SpriteAnimationController GetAnimationController() => sprite[0].Controller;
 
         private bool isMoving()
-            => hotkeys.moveDown.IsPressed()
-            || hotkeys.moveLeft.IsPressed()
-            || hotkeys.moveRight.IsPressed()
-            || hotkeys.moveUp.IsPressed();
+            => hotkeys.moveDown.IsPressed(false)
+            || hotkeys.moveLeft.IsPressed(false)
+            || hotkeys.moveRight.IsPressed(false)
+            || hotkeys.moveUp.IsPressed(false);
     }
 }
