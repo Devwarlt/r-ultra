@@ -2,7 +2,7 @@
 
 namespace org.loesoft.rotmg.ultra.core.assets
 {
-    public static class GlobalSpriteID
+    public static class AssetSpriteID
     {
         public static readonly AssetID SampleWizard;
     }

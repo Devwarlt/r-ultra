@@ -32,7 +32,7 @@ namespace org.loesoftgames.rotmg.rultra
 
             OpenGLUltravioletContext ultravioletContext = null;
 
-            var game = new Game(company, application);
+            var game = new Game2(company, application);
             game.Configure(
                 ref ultravioletContext,
                 out IUltravioletWindow ultravioletWindow,
@@ -42,6 +42,7 @@ namespace org.loesoftgames.rotmg.rultra
             content = contentManager;
             window = ultravioletWindow;
             window.SetWindowedClientSizeCentered(size);
+            window.ClientSize = size;
 
             using (game) game.Run();
         }

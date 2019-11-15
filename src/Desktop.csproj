@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{35E2665E-DFF7-4BC8-A0E9-42F6304ED103}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>org.loesoft.rotmg.ultra</RootNamespace>
     <AssemblyName>R-Ultra</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -106,29 +106,65 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="core\assets\Camera.cs" />
-    <Compile Include="core\assets\entities\Entity.cs" />
-    <Compile Include="core\assets\entities\Player.cs" />
-    <Compile Include="core\assets\GlobalSpriteID.cs" />
+    <Compile Include="core\assets\AssetHudID.cs" />
+    <Compile Include="core\Camera.cs" />
+    <Compile Include="core\entities\MoveState.cs" />
+    <Compile Include="core\entities\Entity.cs" />
+    <Compile Include="core\entities\Player.cs" />
+    <Compile Include="core\assets\AssetFontID.cs" />
+    <Compile Include="core\assets\AssetSpriteID.cs" />
+    <Compile Include="core\Game2.cs" />
+    <Compile Include="core\Hotkeys.cs" />
+    <Compile Include="core\texts\TextAlignment.cs" />
+    <Compile Include="core\texts\TextDisplay.cs" />
+    <Compile Include="core\texts\TextDisplayStyle.cs" />
     <Compile Include="core\Game.cs" />
-    <None Include="core\assets\manifests\assets.manifest">
+    <None Include="resources\manifests\fonts.manifest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="core\assets\sprites\SampleWizard.sprite">
+    <None Include="resources\manifests\hud.manifest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="core\dao\.gitkeep" />
-    <None Include="core\gui\screen\.gitkeep" />
+    <None Include="resources\manifests\sprites.manifest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="resources\hud\Cancel.sprite">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="resources\hud\Ok.sprite">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="resources\sprites\SampleWizard.sprite">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Compile Include="core\GameUtils.cs" />
+    <Compile Include="core\Monitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="core\vo\.gitkeep" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="core\assets\sprites\textures\SampleWizard.png">
+    <Content Include="resources\fonts\Garamond.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\fonts\GaramondTexture.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\fonts\SegoeUI.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\fonts\SegoeUITexture.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\hud\textures\Cancel.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\hud\textures\Ok.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\sprites\textures\SampleWizard.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="loesoft-new.ico" />

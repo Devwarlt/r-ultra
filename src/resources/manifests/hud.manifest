@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentManifest Name="hud">
+  <ContentGroup Name="all" Directory="hud" Type="Ultraviolet.Graphics.Graphics2D.Sprite">
+    <Asset Name="Ok">Ok</Asset>
+    <Asset Name="Cancel">Cancel</Asset>
+  </ContentGroup>
+</ContentManifest>
