@@ -16,7 +16,6 @@ namespace org.loesoft.rotmg.ultra.core
 
         public Matrix GetMatrix()
             => Matrix.CreateTranslation(-position.X, -position.Y, 0) *
-            Matrix.CreateScale(1f) *
             Matrix.CreateTranslation(screenSize.Width, screenSize.Height, 1);
 
         public void SetPosition(Entity entity) => position = entity.GetPosition();
